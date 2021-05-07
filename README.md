@@ -23,15 +23,15 @@ If you are from India and struggling to find a vaccination slot, worry not and u
 
 ### **Basic Setup**
 Step 1. Fork/clone this project </br>
-Step 2. Head over to [DISTRICTS LOOKUP](DISTRICT-LOOKUP.md) file and find out district id of your district (You know how to use command/ctrl + F) </br>
+Step 2. Head over to [DISTRICTS LOOKUP](DISTRICTS-LOOKUP.md) file and find out district id of your district (You know how to use command/ctrl + F) </br>
 Step 4. Head over to [config](config.ini) file and update **district_id** and **beneficiary_age** in the [cowin] section </br></br>
 
 ### **WhatsApp notification service setup**
 Step 1. Sign up for a twilio account using this [link](www.twilio.com/referral/3HiRr6) </br>
-Step 2. Head over to *Programmable Messaging > Try it Out > Try Whatsapp* on Twilio. Save your twilio contact number on phone and send join code *(In my case, it is **join sheet-uncle**)* as a WhatsApp message to your number. You have now setup a WhatsApp sandbox. 
+Step 2. Head over to **Programmable Messaging > Try it Out > Try Whatsapp** on Twilio. Save your twilio contact number on phone and send join code *(In my case, it is **join sheet-uncle**)* as a WhatsApp message to your number. You have now setup a WhatsApp sandbox. 
 </br>
 ![](./screenshots/twilio_whatsapp_sandbox.png)</br>
-Step 3. Head over to Console Dashboard on Twilio. Copy **ACCOUNT SID** and **AUTH TOKEN** and paste it in the [twilio] section of the [config](config.ini) file. Also, update the twilio number and your personal WhatsApp number in the same section of the config file.
+Step 3. Head over to Console Dashboard on Twilio. Copy **ACCOUNT SID** and **AUTH TOKEN** and paste it in the [twilio] section of the [config](config.ini) file. Also, update the twilio number and your personal WhatsApp number in the same section of the [config](config.ini) file.
 
 ### **Run it**
 
@@ -51,7 +51,7 @@ However, running this project locally is not a great idea. Deploy and run it in 
 
 ### Heroku deployment (optional) </br>
 Step 1. Sign up for a Heroku account [here](https://signup.heroku.com/login) </br>
-Step 2. Click on **Create New App** and choose a simple name for the deployment *(In my case it is **vaccine-slot-notifier**. You can have give any name other than this)*. Click on **create app** </br>
+Step 2. Click on **Create New App** and choose a simple name for the deployment *(In my case it is **vaccine-slot-notifier**. You can give any name other than this)*. Click on **create app** </br> once you are done naming the application
 ![](./screenshots/heroku_project.png) </br>
 Step 3. In the deployment method, click on **Connect to GitHub** > search for the repository name from GitHub and click on **connect** that is against the repository name of this project. Scroll down to the bottom once you connect and click on **Enable Automatic Deploys** and click on **Deploy Branch** </br>
 ![](./screenshots/heroku_deployment.png) </br>
