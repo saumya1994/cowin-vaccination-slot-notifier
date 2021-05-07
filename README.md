@@ -51,14 +51,14 @@ However, running this project locally is not a great idea. Deploy and run it in 
 
 ### Heroku deployment (optional) </br>
 Step 1. Sign up for a Heroku account [here](https://signup.heroku.com/login) </br>
-Step 2. Click on **Create New App** and choose a simple name for the deployment *(In my case it is **vaccine-slot-notifier**. You can have give any name other than this)*. Click on **create app**
+Step 2. Click on **Create New App** and choose a simple name for the deployment *(In my case it is **vaccine-slot-notifier**. You can have give any name other than this)*. Click on **create app** </br>
 ![](./screenshots/heroku_project.png)
-Step 3. In the deployment method, click on **Connect to GitHub** > search for the repository name from GitHub and click on **connect** that is against the repository name of this project. Scroll down to the bottom once you connect and click on **Enable Automatic Deploys** and click on **Deploy Branch**
+Step 3. In the deployment method, click on **Connect to GitHub** > search for the repository name from GitHub and click on **connect** that is against the repository name of this project. Scroll down to the bottom once you connect and click on **Enable Automatic Deploys** and click on **Deploy Branch** </br>
 ![](./screenshots/heroku_deployment.png)
 
 Project is now deployed on Heroku. One final step is to start execution of the program in Heroku Dyno.
 
-Head over to **Resources** > Click on **Edit dyno formation** > Toggle the swith that is against the program and **click confirm**
+Head over to **Resources** > Click on **Edit dyno formation** > Toggle the swith that is against the program and **click confirm** </br>
 ![](./screenshots/heroku_run.png)
 
 Program will now remain active at all times in Heroku Dyno. You should be receiving notification service status on WhatsApp status.
