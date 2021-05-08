@@ -22,6 +22,23 @@ message_text_primary = '*Vaccination slot availability notification*\n\n\n'
 send_message_flag = False
 
 def get_slot_availability(cowin_args):
+    """
+    This function makes API calls to coWIN and knits a text message when vaccination slots are available
+    ...
+
+    Parameters
+    ----------
+    cowin_args : list
+        a list of arguments containing configurations set by user in the [cowin] section of config file
+
+    Returns
+    -------
+    tuple
+        a tuple with message flag in boolean and message text in string
+        index 0 : send_message_flag
+        index 1 : message_text_primary
+    """
+
     district_id = cowin_args['district_id']
     beneficiary_age = int(cowin_args['beneficiary_age'])
 
@@ -60,6 +77,22 @@ def get_slot_availability(cowin_args):
 
 
 def send_whatsapp_message(twilio_args, message_text):
+    """
+    This function sends WhatsApp message to the user
+    ...
+
+    Parameters
+    ----------
+    twilio_args : list
+        a list of arguments containing configurations set by user in the [twilio] section of config file
+    message_text : str
+        a string of text message
+
+    Returns
+    -------
+    None
+    """
+
     twilio_number = twilio_args['twilio_number']
     personal_number = twilio_args['personal_number']
     message = client.messages.create( 
@@ -69,6 +102,27 @@ def send_whatsapp_message(twilio_args, message_text):
                     )
 
 def main(cowin_args, twilio_args):
+    """
+    Main function that gets called at schedule set by the user 
+    ...
+
+    Internal function calls
+    -----------------------
+    get_slot_availability : finds available vaccination slots and knits a text message
+    send_whatsapp_message : sends WhatsApp message to the user
+
+    Parameters
+    ----------
+    cowin_args : list
+        a list of arguments containing configurations set by user in the [cowin] section of config file
+    twilio_args : list
+        a list of arguments containing configurations set by user in the [twilio] section of config file
+    
+    Returns
+    -------
+    None
+    """
+
     print('[INFO] Checking for vaccination slot availability')
     send_message_flag, message_text = get_slot_availability(cowin_args)
     message_text_length = len(message_text)
@@ -93,7 +147,7 @@ def main(cowin_args, twilio_args):
 if __name__=='__main__':
     send_whatsapp_message(twilio_args, 'You have been subscribed to vaccination slot availability notification service. You will receive a notification when a slot opens up in a center near you. Reply stop if you want to stop this notification service.')
     main(cowin_args, twilio_args)
-    schedule.every(1).minutes.do(main, cowin_args, twilio_args)
+    schedule.every(30).minutes.do(main, cowin_args, twilio_args)
     while 1:
         schedule.run_pending()
         time.sleep(1)

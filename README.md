@@ -9,9 +9,10 @@ If you are from India and struggling to find a vaccination slot, worry not and u
 ## Dependencies
 
 ### Python packages
-1. twilio
-2. scheduler
-3. configparser
+1. requests
+2. twilio
+3. schedule
+4. configparser
 
 ### Third-party accounts
 1. Twilio
@@ -28,10 +29,10 @@ Step 4. Head over to [config](config.ini) file and update **district_id** and **
 
 ### **WhatsApp notification service setup**
 Step 1. Sign up for a twilio account using this [link](https://www.twilio.com/try-twilio?promo=3HiRr6) </br>
-Step 2. Head over to **Programmable Messaging > Try it Out > Try Whatsapp** on Twilio. Save your twilio contact number on phone and send join code *(In my case, it is **join sheet-uncle**)* as a WhatsApp message to your number. You have now setup a WhatsApp sandbox. 
+Step 2. Head over to **Programmable Messaging > Try it Out > Try Whatsapp** on Twilio. Save your twilio WhatsApp sandbox contact number(number that you see on **Try WhatsApp** window) on phone and send join code *(In my case, it is **join sheet-uncle**)* as a WhatsApp message to your number. You have now setup a WhatsApp sandbox. 
 </br>
 ![](./screenshots/twilio_whatsapp_sandbox.png)</br>
-Step 3. Head over to Console Dashboard on Twilio. Copy **ACCOUNT SID** and **AUTH TOKEN** and paste it in the [twilio] section of the [config](config.ini) file. Also, update the twilio number and your personal WhatsApp number in the same section of the [config](config.ini) file.
+Step 3. Head over to Console Dashboard on Twilio. Copy **ACCOUNT SID** and **AUTH TOKEN** and paste it in the [twilio] section of the [config](config.ini) file. Also, update the [config](config.ini) file with your twilio WhatsApp sandbox contact number (same contact number that is saved on your phone).
 
 ### **Run it**
 
