@@ -27,7 +27,7 @@ Step 2. Head over to [DISTRICTS LOOKUP](DISTRICTS-LOOKUP.md) file and find out d
 Step 4. Head over to [config](config.ini) file and update **district_id** and **beneficiary_age** in the [cowin] section </br></br>
 
 ### **WhatsApp notification service setup**
-Step 1. Sign up for a twilio account using this [link](www.twilio.com/referral/3HiRr6) </br>
+Step 1. Sign up for a twilio account using this [link](https://www.twilio.com/try-twilio?promo=3HiRr6) </br>
 Step 2. Head over to **Programmable Messaging > Try it Out > Try Whatsapp** on Twilio. Save your twilio contact number on phone and send join code *(In my case, it is **join sheet-uncle**)* as a WhatsApp message to your number. You have now setup a WhatsApp sandbox. 
 </br>
 ![](./screenshots/twilio_whatsapp_sandbox.png)</br>
